@@ -1,9 +1,11 @@
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static final Scanner scanner = new Scanner(System.in);
+    
     public static void main(String[] args) {
         Connection connection = null;
 
@@ -13,61 +15,80 @@ public class Main {
             userManager.setConnection(connection);
 
             while (true) {
+                System.out.println("\n\t\t==============================================================");
+                System.out.println("\t\t           Welcome to the EZBYTE Food Ordering System!");
+                System.out.println("\t\t==============================================================\n");
                 System.out.println("1. Register User");
                 System.out.println("2. Log in Ezbyte Account");
                 System.out.println("3. Display Menu");
-                System.out.println("4. Exit Ezbyte");
+                System.out.println("4. Exit Ezbyte\n");
 
-                int choice = scanner.nextInt();
-                scanner.nextLine();  
+                int choice;
+                System.out.print("Enter the number of your choice: ");
+                
+                try {
+                    choice = scanner.nextInt();
+                    scanner.nextLine();  // Clear buffer
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Please enter a valid number (1-4).");
+                    scanner.nextLine();  // Clear the invalid input
+                    continue;
+                }
 
                 switch (choice) {
-                    case 1:
-                        System.out.println("Register a New User");
-
+                    case 1 -> {
+                        System.out.println("\n\t\t\t  -------------REGISTER NEW USER-------------\n");
                         System.out.print("Enter a username (at least 4 characters): ");
                         String newUsername = scanner.nextLine();
-                        if (newUsername.length() < 4) {
-                            System.out.println("Error: Username must be at least 4 characters long.");
+                        if (newUsername.length() < 4 ) {
+                            System.out.println("\n\t\t\t  ===========================================");
+                            System.out.println("\t\t\t  Username must be at least 4 characters long");
+                            System.out.println("\t\t\t  ===========================================");
                             break;
                         }
                         if (userManager.isUsernameTaken(newUsername)) {
-                            System.out.println("Error: Username already exists. Please choose a different username.");
+                            System.out.println("\n\t\t\t    ======================================================");
+                            System.out.println("\t\t\t    Username already exists. Please choose a different one");
+                            System.out.println("\t\t\t    ======================================================\n");
                             break;
                         }
+
                         System.out.print("Enter a password (at least 8 characters): ");
                         String newPassword = scanner.nextLine();
                         if (newPassword.length() < 8) {
-                            System.out.println("Error: Password must be at least 8 characters long.");
+                            System.out.println("\n\t\t\t  ===========================================");
+                            System.out.println("\t\t\t  Password must be at least 8 characters long");
+                            System.out.println("\t\t\t  ===========================================\n");
                             break;
                         }
 
                         System.out.print("Enter your phone number (exactly 11 digits): ");
                         String phoneNumber = scanner.nextLine();
                         if (phoneNumber.length() != 11 || !phoneNumber.matches("\\d{11}")) {
-                            System.out.println("Error: Phone number must be exactly 11 digits.");
-                            break;
-                        }
-                        if (phoneNumber.isEmpty()) {
-                            System.out.println("Error: Phone number cannot be empty.");
+                            System.out.println("\n\t\t\t  ===========================================");
+                            System.out.println("\t\t\t  Phone number must be exactly 11 digits long");
+                            System.out.println("\t\t\t  ===========================================\n");
                             break;
                         }
 
                         System.out.print("Enter your address: ");
                         String address = scanner.nextLine();
                         if (address.isEmpty()) {
-                            System.out.println("Error: Address cannot be empty.");
+                            System.out.println("\n\t\t\t  ===========================================");
+                            System.out.println("\t\t\t              Address cannot be empty");
+                            System.out.println("\t\t\t  ===========================================\n");
                             break;
                         }
-                        // para madetermine kung register success
+
                         boolean registrationSuccess = userManager.registerUser(newUsername, newPassword, phoneNumber, address);
-                        if (registrationSuccess) {
-                            System.out.println("Registration successful! You can now log in.");
-                        } else {
-                            System.out.println("Registration failed. Please try again.");
+                        if (!registrationSuccess) {
+                            System.out.println("\n\t\t\t\t-------------------------------");
+                            System.out.println("\t\t\t\t       Registration Failed!");
+                            System.out.println("\t\t\t\t-------------------------------\n");
                         }
-                    break;
-                    case 2:
+                    }
+                    
+                    case 2 -> {
                         System.out.print("Enter username: ");
                         String username = scanner.nextLine();
                         System.out.print("Enter password: ");
@@ -75,7 +96,6 @@ public class Main {
                         int userId = userManager.verifyLogin(username, password);
 
                         if (userId != -1) {
-                            System.out.println("Login successful!");
                             UserAccount userAccount = userManager.getUserAccountById(userId);
                             if (userAccount != null) {
                                 Cart userCart = new Cart(connection, userAccount);
@@ -84,8 +104,8 @@ public class Main {
 
                                 userAccount.setCart(userCart);
                                 userAccount.setConnection(connection);
-                                
-                                Order userOrder = new Order(userAccount, userCart); 
+
+                                Order userOrder = new Order(userAccount, userCart);
                                 userAccount.setOrder(userOrder);
                                 userOrder.setConnection(connection);
 
@@ -93,30 +113,33 @@ public class Main {
                             } else {
                                 System.out.println("Error retrieving user account.");
                             }
-                        } else {
-                            System.out.println("Invalid credentials. Please try again.");
                         }
-                        break;
-                        case 3:
+                    }
 
-                        System.out.println("Choose a category to display:");
-                        System.out.println("1. Main Courses");
-                        System.out.println("2. Sandwiches");
-                        System.out.println("3. Salads");
-                        System.out.println("4. Desserts");
-                        System.out.println("5. Beverages");
-                    
-                        System.out.print("Enter the number of your choice: ");
-                        int categoryChoice = scanner.nextInt();
-                        scanner.nextLine(); 
-                    
-                        MenuItem.displayMenu(connection, categoryChoice); 
-                        break;                    
-                    case 4:
-                        System.out.println("Exiting the system. Thank you for using Ezbyte!");
+                    case 3 -> MenuItem.displayMenu(connection); // Displays all categories at once
+
+                    case 4 -> {
+                        System.out.println("        ===========================================================================================");
+                        System.out.println("        ||                                                                                       ||");
+                        System.out.println("        ||                   _____ _                 _     __   __          _                    ||");
+                        System.out.println("        ||                  |_   _| |__   __ _ _ __ | | __ \\ \\ / /__  _   _| |                   ||");
+                        System.out.println("        ||                    | | | '_ \\ / _` | '_ \\| |/ /  \\ V / _ \\| | | | |                   ||");
+                        System.out.println("        ||                    | | | | | | (_| | | | |   <    | | (_) | |_| |_|                   ||");
+                        System.out.println("        ||                    |_| |_| |_|\\__,_|_| |_|_|\\_\\   |_|\\___/ \\__,_(_)                   ||");
+                        System.out.println("        ||                                                                                       ||");
+                        System.out.println("        ||                       for using the EZByte Food Ordering System!                      ||");
+                        System.out.println("        ||                 -----------------------------------------------------                 ||");
+                        System.out.println("        ||                                                                                       ||");
+                        System.out.println("        ||                                                                                       ||");
+                        System.out.println("        ===========================================================================================");                    
                         return;
-                    default:
-                        System.out.println("Please input a valid option");
+                    }
+
+                    default -> {
+                        System.out.println("\n\t\t\t==============================================");
+                        System.out.println("\t\t\t          Please input a valid option");
+                        System.out.println("\t\t\t==============================================\n");                    
+                    }
                 }
             }
         } catch (SQLException e) {
