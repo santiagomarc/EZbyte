@@ -2,11 +2,11 @@
 
 ## I. Project Overview
 
-EzByte Health is a Java-based healthy food ordering system designed to provide users with a nutrition-focused ordering experience. The system allows users to explore a variety of healthy menu options, customize their choices, add items to a personal cart, and manage their transactions through an in-app wallet or a cash-on-delivery method. The project emphasizes user convenience and encourages healthier dietary choices by calculating the nutritional information of each item in the cart. Data is managed with a MySQL database to store user information, cart items, and transactional details, ensuring a persistent and reliable experience.
+EzByte is a Java-based healthy food ordering system designed to provide users with a nutrition-focused ordering experience. The system allows users to explore a variety of healthy menu options, customize their choices, add items to a personal cart, and manage their transactions through an in-app wallet or a cash-on-delivery method. The project emphasizes user convenience and encourages healthier dietary choices by calculating the nutritional information of each item in the cart. Data is managed with a MySQL database to store user information, cart items, and transactional details, ensuring a persistent and reliable experience.
 
 ## II. Application of Object-Oriented Programming (OOP) Principles
 
-EzByte Health was developed with key OOP principles in mind to ensure a modular, maintainable, and scalable codebase. Here’s how each principle was applied:
+EzByte was developed with key OOP principles in mind to ensure a modular, maintainable, and scalable codebase. Here’s how each principle was applied:
 
 - **Encapsulation**: Key attributes and methods of classes such as `MenuItem`, `UserAccount`, and `CartItem` are encapsulated to protect data integrity and maintain clear access control. Getters and setters are used to allow controlled access to data, and the MySQL integration is abstracted within database-related classes.
 
@@ -18,7 +18,7 @@ EzByte Health was developed with key OOP principles in mind to ensure a modular,
 
 ## III. Integration of Sustainable Development Goal 3 (Good Health and Well-being)
 
-EzByte Health aligns with Sustainable Development Goal 3 (SDG 3), which aims to promote health and well-being. The project encourages healthier dietary choices by providing users with detailed nutritional information for each item and allowing for customizations like portion control and adjusting of ingredients. By integrating nutritional tracking, EzByte empowers users to make informed decisions about their meals, supporting better nutrition and overall health.
+EzByte aligns with Sustainable Development Goal 3 (SDG 3), which aims to promote health and well-being. The project encourages healthier dietary choices by providing users with detailed nutritional information for each item and allowing for customizations like portion control and adjusting of ingredients. By integrating nutritional tracking, EzByte empowers users to make informed decisions about their meals, supporting better nutrition and overall health.
 
 ## IV. Instructions for Running the Program
 
@@ -32,14 +32,14 @@ EzByte Health aligns with Sustainable Development Goal 3 (SDG 3), which aims to 
 1. **Clone or Download the Repository**:
    - Clone the repository:
      ```bash
-     git clone https://github.com/your-username/ezbyte-health.git
+     git clone https://github.com/your-username/EZbyte.git
      cd ezbyte-health
      ```
    - Alternatively, you can download the repository as a ZIP file and extract it.
 
 2. **Configure the Database**:
    - Create a new MySQL database.
-   - Import the provided SQL schema file (`schema.sql`) to set up the required tables.
+   - Import the provided SQL schema file (`EZbyte.sql`) to set up the required tables and run it in your workbench.
 
 3. **Update Database Configuration**:
    - Open the `DBConnection` class in your codebase.
