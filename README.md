@@ -1,8 +1,18 @@
-# EzByte - Healthy Food Ordering System
+# 🍎 EzByte - Healthy Food Ordering System
 
-## I. Project Overview
+## I. Project Overview 🌟
 
 EzByte is a Java-based healthy food ordering system designed to provide users with a nutrition-focused ordering experience. The system allows users to explore a variety of healthy menu options, customize their choices, add items to a personal cart, and manage their transactions through an in-app wallet or a cash-on-delivery method. The project emphasizes user convenience and encourages healthier dietary choices by calculating the nutritional information of each item in the cart. Data is managed with a MySQL database to store user information, cart items, and transactional details, ensuring a persistent and reliable experience.
+
+### Key Features ✨
+
+- 🔑 **Register/Login**: Register a new account or log in to access the menu and other features.
+- 📋 **Display Menu**: Display the pre-defined menu of the program to make your choices in advance.
+- 🛒 **Add Items to Cart**: Explore the menu, customize items as needed, and add them to your cart.
+- **Edit Items**: Edit the quantity of an item, remove an item, or clear the content of your cart.
+- **User Features**: Top-up your EZbyte wallet and check your credentials.
+- **View Cart**: Check the items in your cart along with their nutritional details.
+- **Checkout**: Proceed to checkout and pay through your EzByte wallet or opt for cash on delivery.
 
 ## II. Application of Object-Oriented Programming (OOP) Principles
 
@@ -54,12 +64,3 @@ EzByte aligns with Sustainable Development Goal 3 (SDG 3), which aims to promote
      java Main
      ```
 
-### Key Features
-
-- **Register/Login**: Register a new account or log in to access the menu and other features.
-- **Display Menu**: Display the pre-defined menu of the program to make your choices in advance.
-- **Add Items to Cart**: Explore the menu, customize items as needed, and add them to your cart.
-- **Edit Items**: Edit the quantity of an item, remove an item, or clear the content of your cart.
-- **User Features**: Top-up your EZbyte wallet and check your credentials.
-- **View Cart**: Check the items in your cart along with their nutritional details.
-- **Checkout**: Proceed to checkout and pay through your EzByte wallet or opt for cash on delivery.
