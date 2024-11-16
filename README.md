@@ -2,7 +2,7 @@
 
 ## I. Project Overview 🌟
 
-EZByte is a Java-based healthy food ordering system designed to provide users with a nutrition-focused ordering experience. The system allows users to explore a variety of healthy menu options, customize their choices, add items to a personal cart, and manage their transactions through an in-app wallet or a cash-on-delivery method. The project emphasizes user convenience and encourages healthier dietary choices by calculating the nutritional information of each item in the cart. Data is managed with a MySQL database to store user information, cart items, and transactional details, ensuring a persistent and reliable experience.
+EZByte is a Java-based healthy food ordering system designed to provide users with a nutrition-focused ordering experience. The system allows users to explore a variety of healthy menu options, customize their choices, add items to a personal cart, and manage their transactions through an in-app wallet or a cash-on-delivery method. The project emphasizes user convenience and encourages healthier dietary choices by calculating the nutritional information of each item in the cart. Data is managed with a MySQL database to store user information, cart items, and transactional details, ensuring a persistent and reliable experience!
 
 ### Key Features ✨
 
@@ -13,6 +13,7 @@ EZByte is a Java-based healthy food ordering system designed to provide users wi
 - 👤 **User Features**: Top-up your EZbyte wallet and check your credentials.
 - 🧾 **View Cart**: Check the items in your cart along with their nutritional details.
 - ✅ **Checkout**: Proceed to checkout and pay through your EzByte wallet or opt for cash on delivery.
+- 🍔 **View Order History**: Check your order history to track the total nutrtional details of your past orders.
 
 ## II. Application of Object-Oriented Programming (OOP) Principles 💡
 
