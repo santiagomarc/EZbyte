@@ -14,11 +14,9 @@ public class UserManager {
 
     public UserManager() {
     }
-
     public Connection getConnection() {
          return connection; 
     }
-
     public void setConnection(Connection connection) { 
         this.connection = connection; 
     }
@@ -42,7 +40,7 @@ public class UserManager {
                         System.out.println("\033[31m\n\t\t\t      Incorrect password. Please try again!\033[0m");
                     }
                 } else {
-                    System.out.println("\033[31m\n\t\t\t   Username does not exist. Please try again!\033[0m");
+                    System.out.println("\033[31m\n\t\t\t       Username does not exist. Please try again!\033[0m");
                 }
             }
         } catch (SQLException e) {
@@ -93,11 +91,11 @@ public class UserManager {
         System.out.print("Enter a username (at least 4 characters): ");
         String username = scanner.nextLine();
         if (username.length() < 4) {
-            System.out.println("\033[31mUsername must be at least 4 characters long!\033[0m");
+            System.out.println("\033[31m\n\t\t\t       Username must be at least 4 characters long!\033[0m");
             return null;
         }
         if (isUsernameTaken(username)) {
-            System.out.println("\033[31mUsername already exists!\033[0m");
+            System.out.println("\033[31m\n\t\t\t\t      Username already exists!\033[0m");
             return null;
         }
         return username;
@@ -107,7 +105,7 @@ public class UserManager {
         System.out.print("Enter a password (at least 8 characters): ");
         String password = scanner.nextLine();
         if (password.length() < 8) {
-            System.out.println("\033[31mPassword must be at least 8 characters long!\033[0m");
+            System.out.println("\033[31m\n\t\t\t       Password must be at least 8 characters long!\033[0m");
             return null;
         }
         return password;
@@ -117,7 +115,7 @@ public class UserManager {
         System.out.print("Enter your phone number (exactly 11 digits): ");
         String phoneNumber = scanner.nextLine();
         if (phoneNumber.length() != 11 || !phoneNumber.matches("\\d{11}")) {
-            System.out.println("\033[31mPhone number must be exactly 11 digits!\033[0m");
+            System.out.println("\033[31m\n\t\t\t         Phone number must be exactly 11 digits!\033[0m");
             return null;
         }
         return phoneNumber;
@@ -161,3 +159,4 @@ public class UserManager {
         return false;
     }
 }
+
