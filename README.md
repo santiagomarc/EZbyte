@@ -10,10 +10,16 @@ EZByte is a Java-based healthy food ordering system designed to provide users wi
 - 📋 **Display Menu**: Display the pre-defined menu of the program to make your choices in advance.
 - 🛒 **Add Items to Cart**: Explore the menu, customize items as needed, and add them to your cart.
 - ✏️ **Edit Items**: Edit the quantity of an item, remove an item, or clear the content of your cart.
-- 👤 **User Features**: Top-up your EZbyte wallet and check your credentials.
 - 🧾 **View Cart**: Check the items in your cart along with their nutritional details.
 - ✅ **Checkout**: Proceed to checkout and pay through your EzByte wallet or opt for cash on delivery.
 - 🍔 **View Order History**: Check your order history to track the total nutrtional details of your past orders.
+- 👤 **User Features**: Top-up your EZbyte wallet and check your credentials.
+
+### MySQL Integration 💾
+to be continued..
+### Error Handling 🚩
+to be continued..
+
 
 ## II. Application of Object-Oriented Programming (OOP) Principles 💡
 
@@ -23,7 +29,7 @@ EZByte is a Java-based healthy food ordering system designed to provide users wi
 
 - 🔄 **Polymorphism**: Polymorphism is used in handling different types of menu items and their display formats. For instance, each subclass of `MenuItem` has its own `customize()` method to provide unique customization options. Methods like `displayDetails()` are overridden in subclasses to format details based on specific requirements. These methods are defined abstractly in the MenuItem class and implemented differently by each subclass. When a MenuItem object is referenced, the program dynamically determines which version of the method to execute based on the actual type of the object. For example, calling customize on a MainCourse object will invoke its specific implementation, while calling it on a Dessert object will execute a different one, allowing the system to handle diverse menu items uniformly.
 
-- 🚀 **Abstraction**: The MenuItem class is abstract, which enforces a common structure for its subclasses while delegating specific implementations of methods like displayDetails() and customize() to the subclasses. The _Customizable_ interface defines a contract for all menu items that can be customized. Each subclass implements getCustomization() differently, adhering to the contract while providing unique behavior based on the object type.
+- 🚀 **Abstraction**: The MenuItem class is abstract, which enforces a common structure for its subclasses while delegating specific implementations of methods like `displayDetails()` and `customize()` to the subclasses. The `Customizable` interface defines a contract for all menu items that can be customized. Each subclass implements `getCustomization()` differently, adhering to the contract while providing unique behavior based on the object type.
 
 ## III. Integration of Sustainable Development Goal 3 (Good Health and Well-being) ❤️‍🩹
 
@@ -43,7 +49,7 @@ EZbyte aligns with Sustainable Development Goal 3 (SDG 3), which aims to promote
 
 2. 🗄️ **Configure the Database**:
    - Create a new MySQL database.
-   - Import the provided SQL schema file (`EZbyte.sql`) to set up the required tables and run it in your workbench.
+   - Import the provided SQL schema file (`EZbyte.sql`) to set up the required tables and run it in your workbench to create the necessary tables.
 
 3. ⚙️ **Update Database Configuration**:
    - Open the `DBConnection` class in your codebase.
@@ -56,12 +62,12 @@ EZbyte aligns with Sustainable Development Goal 3 (SDG 3), which aims to promote
      ```
 
 4. 🏃‍♂️‍➡️ **Compile and Run the Program**:
-   - Navigate to the project directory and compile the program:
+   - Navigate to the 'src' directory and compile the main program:
      ```bash
-     javac Main.java
+     javac main/Main.java
      ```
    - Run the program:
      ```bash
-     java Main
+     java main/Main
      ```
 
