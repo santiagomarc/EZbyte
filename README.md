@@ -16,9 +16,9 @@ EZByte is a Java-based healthy food ordering system designed to provide users wi
 - 👤 **User Features**: Top-up your EZbyte wallet and check your credentials.
 
 ### MySQL Integration 💾
-to be continued..
-### Error Handling 🚩
-to be continued..
+This project integrates a MySQL database to store and retrieve menu items, user data, and order details. The integration ensures data persistence, enabling functionality like saving user carts to the database, loading back the cart content of the user from the database upon logging in, and processing payments.
+### Error and Input Handling 🚩
+Proper Error and Input Handling is implemented all through out the program to ensure that it runs smoothly even when unexpected issues occur such as invalid inputs or trying to edit the cart when it is empty.
 
 
 ## II. Application of Object-Oriented Programming (OOP) Principles 💡
