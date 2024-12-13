@@ -49,7 +49,7 @@ EZbyte aligns with Sustainable Development Goal 3 (SDG 3), which aims to promote
 
 2. 🗄️ **Configure the Database**:
    - Create a new MySQL database.
-   - Import the provided SQL schema file (`EZbyte.sql`) to set up the required tables and run it in your workbench to create the necessary tables.
+   - Import the provided SQL schema file (`init.sql`) to set up the database and run it in your workbench to create the necessary tables.
 
 3. ⚙️ **Update Database Configuration**:
    - Open the `DBConnection` class in your codebase.
